@@ -202,3 +202,6 @@ img{ max-width:100%; height:auto; }
   color: #a31515;
 }
 
+html, body {
+  filter: none;
+}
