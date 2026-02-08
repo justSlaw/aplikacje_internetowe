@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa + puzzle</title>
+    
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>    
+
+
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<main class="container">
+  <header class="toolbar">
+    <button id="btnLocation" type="button">Moja lokalizacja</button>
+    <button id="btnNotifications" type="button">Włącz powiadomienia</button>
+    <button id="btnExport" type="button">Pobierz mapę</button>
+
+    <div class="status" id="status" aria-live="polite"></div>
+  </header>
+
+  <section class="grid">
+    <section class="panel">
+      <h2>Współrzędne</h2>
+      <div id="positionInfo" class="mono">
+        <div><strong>Latitude:</strong> <span id="latitude">—</span></div>
+        <div><strong>Longitude:</strong> <span id="longitude">—</span></div>
+      </div>
+
+      <h2>Mapa</h2>
+      <div id="map" aria-label="Mapa"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Puzzle (4×4)</h2>
+      <p class="hint">Kliknij „Pobierz mapę”, żeby zrobić zrzut mapy i ułożyć puzzle metodą drag & drop.</p>
+
+      <div class="puzzleLayout">
+        <div>
+          <h3>Plansza</h3>
+          <div id="board" class="board" aria-label="Plansza puzzli"></div>
+        </div>
+
+        <div>
+          <h3>Stół</h3>
+          <div id="tray" class="tray" aria-label="Stół z elementami"></div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>
